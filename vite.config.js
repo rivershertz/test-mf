@@ -11,7 +11,7 @@ export default defineConfig({
     federation({
       name: 'trading-client-area',
       filename: 'remoteEntry.js',
-      exposes: {'./ClientArea': './src/components/ClientArea'},
+      exposes: {'./ClientArea': './src/components/ClientArea.vue'},
     }),
   ],
   resolve: {
