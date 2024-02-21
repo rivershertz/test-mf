@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [
     vue(),
     federation({
-      name: 'trading-client-area',
+      name: 'tradingClientArea',
       filename: 'remoteEntry.js',
       exposes: {'./ClientArea': './src/components/ClientArea.vue'},
     }),
