@@ -1,9 +1,10 @@
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+<template>
+  <header><p>Header!</p></header>
+  <ClientArea />
+</template>
+
+<script setup lang="ts">
+  import ClientArea from '@/components/ClientArea.vue';
 </script>
 
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template>
+<style scoped></style>

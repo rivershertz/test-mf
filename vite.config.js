@@ -6,15 +6,6 @@ import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: {
-    proxy: {
-      '/': {
-        target: 'https://test-mf.netlify.app',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\//, ''),
-      },
-    },
-  },
   plugins: [
     vue(),
     federation({
