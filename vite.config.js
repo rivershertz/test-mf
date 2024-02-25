@@ -8,6 +8,9 @@ import vue from '@vitejs/plugin-vue';
 export default defineConfig({
   server: {
     cors: false,
+    headers: {
+      'access-control-allow-origin': '*',
+    },
   },
   plugins: [
     vue(),
@@ -15,6 +18,7 @@ export default defineConfig({
       name: 'tradingClientArea',
       filename: 'remoteEntry.js',
       exposes: {'./ClientArea': './src/components/ClientArea.vue'},
+      shared: {vue: {}},
     }),
   ],
   build: {
