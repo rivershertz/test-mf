@@ -1,13 +1,20 @@
 <template>
   <ClientAreaTitle />
   <button @click="() => console.log('still works')">check</button>
+  <p>{{ state.token }}</p>
 </template>
 
 <script setup lang="ts">
-  import {ref} from 'vue';
+  import {reactive} from 'vue';
   import ClientAreaTitle from '@/components/ClientAreaTitle.vue';
 
-  const error = ref(null);
+  const props = defineProps<{
+    token: string;
+  }>();
+
+  const state = reactive({
+    token: props.token || 'hello',
+  });
 </script>
 
 <style scoped></style>
