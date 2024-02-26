@@ -1,6 +1,6 @@
 <template>
   <ClientAreaTitle />
-  <button @click="() => console.log('still works')">check</button>
+  <button @click="$emit('action', state)">check</button>
   <p>{{ state.token }}</p>
 </template>
 
