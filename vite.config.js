@@ -1,23 +1,13 @@
 import {fileURLToPath, URL} from 'node:url';
-import federation from '@originjs/vite-plugin-federation';
-
+import {resolve, dirname} from 'node:path';
 import {defineConfig} from 'vite';
 import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    federation({
-      name: 'tradingClientArea',
-      filename: 'remoteEntry.js',
-      exposes: {'./ClientArea': './src/components/ClientArea.vue'},
-      shared: {vue: {}},
-    }),
-  ],
+  plugins: [vue()],
   build: {
-    minify: false,
-    target: ['chrome89', 'edge89', 'firefox89', 'safari15'],
+    target: 'esnext',
   },
   resolve: {
     alias: {

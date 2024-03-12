@@ -1,17 +1,24 @@
 <script setup>
-  import {onErrorCaptured, ref} from 'vue';
+  import {defineAsyncComponent, onErrorCaptured, ref} from 'vue';
   import {RouterView} from 'vue-router';
+
   const error = ref(null);
   onErrorCaptured((e) => {
     error.value = e;
     return false;
   });
+
+  const clientId = ref(335);
 </script>
 
 <template>
-  <div v-if="error">
-    {{ error }}
-  </div>
+  <ClientArea
+    token="123"
+    :clientId="clientId"
+    :brandId="67"
+    theme="dark"
+    languageCode="fr"
+    traderId="5" />
   <RouterView />
 </template>
 

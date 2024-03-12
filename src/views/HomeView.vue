@@ -1,10 +1,5 @@
-<template>
-  <header><p>Header!</p></header>
-  <ClientArea />
-</template>
+<template></template>
 
-<script setup lang="ts">
-  import ClientArea from '@/components/ClientArea.vue';
-</script>
+<script setup lang="ts"></script>
 
 <style scoped></style>
